@@ -1,0 +1,6 @@
+schemaVersion: "v2"
+
+name: repo-template-ts-lib
+team: teamid
+description: This is a template app, do not forget to change its metadata
+technology: node

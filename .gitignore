@@ -1,0 +1,29 @@
+# Node
+npm-debug.log
+node_modules/*
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editors
+/.idea/
+/.vscode/
+
+# vi
+*~
+
+# General
+log/
+*.log
+
+# Transpiled files
+/dist/
+
+# ENV
+/.env
+
+# Other
+/coverage/
