@@ -1,5 +1,5 @@
 {
-  "name": "@parcellab/cm-banner",
+  "name": "@parcellab/cm-utils",
   "version": "0.0.1",
   "description": "Campaign manager utils for your e-commerce shop/app.",
   "main": "dist/index.cjs.js",
