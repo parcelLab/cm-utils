@@ -4,3 +4,5 @@ build
 CODEOWNERS
 /dist/
 renovate.json
+/www/
+*.d.ts
