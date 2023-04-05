@@ -1,26 +1,47 @@
 {
-  "name": "@parcellab/repo-template-ts-lib",
-  "version": "0.0.0",
-  "description": "Specific parcelLab configuration for TypeScript libraries",
-  "author": "engineering@parcellab.com",
-  "main": "dist/index.js",
-  "type": "module",
-  "keywords": [
-    "example",
-    "template"
-  ],
-  "engines": {
-    "node": ">=v18"
-  },
-  "engineStrict": true,
-  "publishConfig": {
-    "@parcellab:registry": "https://npm.pkg.github.com"
-  },
+  "name": "@parcellab/cm-banner",
+  "version": "0.0.1",
+  "description": "Campaign manager utils for your e-commerce shop/app.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/cm-utils/cm-utils.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/parcelLab/repo-template-ts-lib.git"
+    "url": "https://github.com/parcelLab/cm-utils"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "prepare": "test \"$NODE_ENV\" = production || is-ci || husky install",
+    "commitlint": "commitlint -x @commitlint/config-conventional --edit",
+    "format": "prettier --write --ignore-unknown .",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check --ignore-unknown .",
+    "lint:staged": "lint-staged",
+    "lint:types": "tsc --noEmit",
+    "lint": "npm run lint:types && npm run lint:eslint && npm run lint:prettier"
+  },
+  "dependencies": {
+    "@stencil/core": "^3.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.11",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "puppeteer": "^19.5.2",
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
     "@parcellab/eslint-config": "^0.5.2",
@@ -38,22 +59,7 @@
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3"
   },
-  "dependencies": {
-    "@types/node": "^18.11.18",
-    "ts-node": "^10.9.1"
-  },
-  "scripts": {
-    "build": "tsc",
-    "commitlint": "commitlint -x @commitlint/config-conventional --edit",
-    "format": "prettier --write --ignore-unknown .",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier --check --ignore-unknown .",
-    "lint:staged": "lint-staged",
-    "lint:types": "tsc --noEmit",
-    "lint": "npm run lint:types && npm run lint:eslint && npm run lint:prettier",
-    "prepare": "test \"$NODE_ENV\" = production || is-ci || husky install",
-    "test": "c8 --all node --test --loader ts-node/esm ./test/**.ts"
-  },
+  "license": "MIT",
   "c8": {
     "branches": 100,
     "check-coverage": true,

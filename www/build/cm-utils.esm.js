@@ -1,0 +1,2 @@
+import{p as e,b as n}from"./p-63ebe09a.js";export{s as setNonce}from"./p-63ebe09a.js";const a=()=>{const n=import.meta.url;const a={};if(n!==""){a.resourcesUrl=new URL(".",n).href}return e(a)};a().then((e=>n([["p-b970f831",[[0,"pl-cm-banner",{apiURL:[1,"api-u-r-l"],medium:[1],contentType:[1,"content-type"],bannerType:[1,"banner-type"],language:[1],trackingId:[1025,"tracking-id"],_campaign:[32],bannerSrc:[32],targetUrl:[32]}]]]],e)));
+//# sourceMappingURL=cm-utils.esm.js.map

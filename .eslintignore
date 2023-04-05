@@ -1,3 +1,7 @@
 .eslintrc.cjs
 /dist/
 /coverage/
+/loader/
+/www/
+*.d.ts
+stencil.config.ts
