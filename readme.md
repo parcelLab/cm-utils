@@ -4,7 +4,7 @@ Campaign manager utilities for your e-commerce shop/app.
 
 ## `<pl-cm-banner>` web component
 
-Renders parcelLab campaign manger content in any website/shop/app.  
+Renders parcelLab campaign manager content in any website/shop/app.  
 For identifying what campaign to render you can pass either a parcelLab tracking-id or the component will try to identify the current tracking via the browsers URL search query in the manner of the parcelLab's order status page/track and trace plugin.  
 (e.g. `/order-tracking.html?tno=1234567&courier=dhl-germany`)
 
@@ -14,7 +14,7 @@ For using the pl-cm-banner component, just import the es module somewhere in you
 
 ```html
 <!-- ... -->
-  <script type="module" src="https://unpkg.com/@parcellab/cm-banner"></script>
+  <script type="module" src="https://unpkg.com/@parcellab/cm-utils"></script>
 </head>
 <body>
 
