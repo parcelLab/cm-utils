@@ -38,4 +38,4 @@ jobs:
       access: public
       version: ${{ needs.version.outputs.version }}
     secrets:
-      githubAuthToken: ${{ secrets.REPO_ACCESS_TOKEN }}
+      githubAuthToken: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
