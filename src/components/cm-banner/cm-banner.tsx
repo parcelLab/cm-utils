@@ -57,14 +57,11 @@ export class CmBanner {
 		const userId =
 			search.get("plUserId") || search.get("u") || search.get("userId");
 
-		return {
-			xid,
-			trackingId,
-			trackingNo,
-			courier,
-			orderNo,
-			userId,
-		};
+		if (xid && userId) return { xid, u: userId };
+		if (trackingId) return { tid: trackingId };
+		if (trackingNo && courier) return { tno: trackingNo, courier };
+		if (orderNo && userId) return { orderNo, u: userId };
+		return null;
 	}
 
 	async fetchTrackingInfos(search: URLSearchParams): Promise<TrackingInfo> {
@@ -78,13 +75,10 @@ export class CmBanner {
 	async discoverTrackingId() {
 		if (!this.trackingId) {
 			const urlProps = this.getTrackingPropsFromURL();
-			if (urlProps.trackingId) return urlProps.trackingId;
 
-			if (
-				(urlProps.trackingNo && urlProps.courier) ||
-				(urlProps.orderNo && urlProps.userId) ||
-				(urlProps.xid && urlProps.userId)
-			) {
+			if (urlProps?.tid) return urlProps.tid;
+
+			if (urlProps) {
 				const trackingInfos = await this.fetchTrackingInfos(
 					new URLSearchParams(urlProps)
 				);

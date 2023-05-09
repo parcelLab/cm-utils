@@ -24,14 +24,15 @@ const CmBanner = class {
     const courier = search.get("courier") || search.get("c");
     const orderNo = search.get("orderNo");
     const userId = search.get("plUserId") || search.get("u") || search.get("userId");
-    return {
-      xid,
-      trackingId,
-      trackingNo,
-      courier,
-      orderNo,
-      userId,
-    };
+    if (xid && userId)
+      return { xid, u: userId };
+    if (trackingId)
+      return { tid: trackingId };
+    if (trackingNo && courier)
+      return { tno: trackingNo, courier };
+    if (orderNo && userId)
+      return { orderNo, u: userId };
+    return null;
   }
   async fetchTrackingInfos(search) {
     return this.fetchJSON(`https://api.parcellab.com/v2/checkpoints?${new URLSearchParams(search).toString()}`);
@@ -40,11 +41,9 @@ const CmBanner = class {
     var _a, _b, _c, _d;
     if (!this.trackingId) {
       const urlProps = this.getTrackingPropsFromURL();
-      if (urlProps.trackingId)
-        return urlProps.trackingId;
-      if ((urlProps.trackingNo && urlProps.courier) ||
-        (urlProps.orderNo && urlProps.userId) ||
-        (urlProps.xid && urlProps.userId)) {
+      if (urlProps === null || urlProps === void 0 ? void 0 : urlProps.tid)
+        return urlProps.tid;
+      if (urlProps) {
         const trackingInfos = await this.fetchTrackingInfos(new URLSearchParams(urlProps));
         if ((_b = (_a = trackingInfos === null || trackingInfos === void 0 ? void 0 : trackingInfos.header) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.id)
           this.trackingId = (_d = (_c = trackingInfos === null || trackingInfos === void 0 ? void 0 : trackingInfos.header) === null || _c === void 0 ? void 0 : _c[0]) === null || _d === void 0 ? void 0 : _d.id;
