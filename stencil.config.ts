@@ -4,18 +4,8 @@ export const config: Config = {
 	namespace: "cm-utils",
 	outputTargets: [
 		{
-			type: "dist",
-			esmLoaderPath: "../loader",
-		},
-		{
 			type: "dist-custom-elements",
-		},
-		{
-			type: "docs-readme",
-		},
-		{
-			type: "www",
-			serviceWorker: null, // disable service workers
+			externalRuntime: false,
 		},
 	],
 };

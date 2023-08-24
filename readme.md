@@ -12,6 +12,22 @@ For identifying what campaign to render you can pass either a parcelLab tracking
 
 For using the pl-cm-banner component, just import the es module somewhere in your website - and place the `<pl-cm-banner>` in your HTML, wherever you want to display the campaign manager banner:
 
+As static JS bundle from the parcelLab CDN:
+
+```html
+<!-- ... -->
+  <script src="https://cdn.parcellab.com/js/cm-utils/bundle.js"></script>
+</head>
+<body>
+
+  <div class="col">
+    <pl-cm-banner></pl-cm-banner>
+  <div/>
+  <!-- ... -->
+```
+
+Or as ESM Javascript Module, directly from unpkg package manager:
+
 ```html
 <!-- ... -->
   <script type="module" src="https://unpkg.com/@parcellab/cm-utils"></script>
