@@ -1,6 +1,6 @@
 {
   "name": "@parcellab/cm-utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Campaign manager utils for your e-commerce shop/app.",
   "main": "dist/index.cjs.js",
   "private": false,
