@@ -5,3 +5,4 @@
 /www/
 *.d.ts
 stencil.config.ts
+/components-registry/
