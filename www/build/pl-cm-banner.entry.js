@@ -5,7 +5,7 @@ class HTTPError extends Error {
 const CmBanner = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    this.apiURL = "https://business-api.parcellab.com/v3/public/campaign/contentBlocks";
+    this.apiURL = "https://business-api.parcellab.com/v3/public/campaign/evaluate/";
     this.medium = "web";
     this.contentType = "banner_order_status_page";
     this.bannerType = "mainBannerVertical";

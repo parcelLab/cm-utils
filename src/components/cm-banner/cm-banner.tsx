@@ -31,7 +31,7 @@ type TrackingInfo = {
 })
 export class CmBanner {
 	@Prop() apiURL: string =
-		"https://business-api.parcellab.com/v3/public/campaign/contentBlocks";
+		"https://product-api.parcellab.com/v3/public/campaign/evaluate/";
 	@Prop() medium: string = "web";
 	@Prop() contentType: string = "banner_order_status_page";
 	@Prop() bannerType: string = "mainBannerVertical";
